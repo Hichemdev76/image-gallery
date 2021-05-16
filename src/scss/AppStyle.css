@@ -5,12 +5,9 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-body,
-.dark,
-.white {
   height: 100vh;
+  color: #1d1d1d;
+  background: #f5f5f5;
 }
 
 .dark {
@@ -18,7 +15,7 @@ body,
   background: #1d1d1d;
 }
 
-.white,
+.light,
 .SearchBar form input {
   color: #1d1d1d;
   background: #f5f5f5;
@@ -28,9 +25,7 @@ body,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 2em 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -38,7 +33,6 @@ body,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 80vh;
 }
 
 .SearchBar h1 {
@@ -50,6 +44,12 @@ body,
   width: 60%;
 }
 
+.SearchBar form label {
+  font-weight: 400;
+  font-size: 1.17em;
+  letter-spacing: 2px;
+}
+
 .SearchBar form input {
   width: 100%;
   border: #1d1d1d solid 2px;
@@ -58,5 +58,20 @@ body,
   font-weight: 600;
   padding: 10px;
   margin: 10px 0;
+}
+
+.imageList {
+  width: 80%;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 0 10px;
+}
+
+.imageList img {
+  width: 100%;
+  border-radius: 3px;
 }
 /*# sourceMappingURL=AppStyle.css.map */

@@ -1,10 +1,11 @@
 import React from "react";
 import Unsplash from "../API/Unsplash";
 import SearchBar from "./SearchBar";
+import ImageList from "./ImageList";
 import "../scss/AppStyle.css";
 
 export default class App extends React.Component {
-	state = { image: [], theme: "white" };
+	state = { image: [], theme: "light" };
 
 	onSearchSubmit = (term) => {
 		Unsplash.get("/search/photos", {
@@ -12,10 +13,10 @@ export default class App extends React.Component {
 		}).then((res) => this.setState({ image: res.data.results }));
 	};
 	renderContent() {
-		console.log(this.state.image);
 		return (
 			<div className={`App ${this.state.theme}`}>
 				<SearchBar onSubmit={this.onSearchSubmit} />
+				<ImageList image={this.state.image} />
 			</div>
 		);
 	}
